@@ -10,5 +10,9 @@ public class SumAverageRunningInt {
         for (int number = lowerBound; number <= upperBound; ++number) {
             sum += number;
         }
+
+        double averageNumber = (double) sum / (upperBound - lowerBound);
+        System.out.println("The sum of " + lowerBound + " to " + upperBound + " is " + sum);
+        System.out.printf("The average is %.1f\n", averageNumber);
     }
 }
