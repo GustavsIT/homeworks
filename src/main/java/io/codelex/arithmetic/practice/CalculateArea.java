@@ -21,6 +21,8 @@ public class CalculateArea {
                 calculateTriangleArea();
             } else if (choice == 4) {
                 System.out.println("Thanks for calculating!");
+            } else {
+                System.out.println("404 error, pick a number between 1-4!!!");
             }
 
         } while (choice != 4);
@@ -60,12 +62,19 @@ public class CalculateArea {
         // Get input from user
         Scanner keyboard = new Scanner(System.in);
         System.out.print("What is the circle's radius? ");
-        //todo
-        //radius = keyboard.nextDouble();
+
+        radius = keyboard.nextBigDecimal();
+
+        if (radius.compareTo(BigDecimal.ZERO) < 0) {
+            System.out.println("Error: Radius cannot be negative.");
+            return;
+        }
+
+        BigDecimal pi = BigDecimal.valueOf(Math.PI);
+        BigDecimal circleArea = pi.multiply(radius.pow(2));
 
         // Display output
-        System.out.println("The circle's area is "
-                + Geometry.areaOfCircle(radius));
+        System.out.println("The circle's area is " + circleArea);
     }
 
     public static void calculateRectangleArea() {
@@ -77,17 +86,27 @@ public class CalculateArea {
 
         // Get length
         System.out.print("Enter length? ");
-        //todo
-        //length = keyboard.nextDouble();
+        length = keyboard.nextBigDecimal();
 
         // Get width
         System.out.print("Enter width? ");
-        //todo
-        //width = keyboard.nextDouble();
+        width = keyboard.nextBigDecimal();
+
+
+        if (length.compareTo(BigDecimal.ZERO) < 0) {
+            System.out.println("Error: length cannot be negative.");
+            return;
+        }
+        if (width.compareTo(BigDecimal.ZERO) < 0) {
+            System.out.println("Error: width cannot be negative.");
+            return;
+        }
+
+        // Calculate rectangle area
+        BigDecimal rectangleArea = length.multiply(width);
 
         // Display output
-        System.out.println("The rectangle's area is "
-                + Geometry.areaOfRectangle(length, width));
+        System.out.println("The rectangle's area is " + rectangleArea);
     }
 
     public static void calculateTriangleArea() {
@@ -99,16 +118,26 @@ public class CalculateArea {
 
         // Get the base
         System.out.print("Enter length of the triangle's base? ");
-        //todo
-        //base = keyboard.nextDouble();
+        base = BigDecimal.valueOf(keyboard.nextDouble());
 
         // Get the height
         System.out.print("Enter triangle's height? ");
-        //todo
-        //height = keyboard.nextDouble();
+        height = BigDecimal.valueOf(keyboard.nextDouble());
+
+
+        if (base.compareTo(BigDecimal.ZERO) < 0) {
+            System.out.println("Error: base cannot be negative.");
+            return;
+        }
+        if (height.compareTo(BigDecimal.ZERO) < 0) {
+            System.out.println("Error: height cannot be negative.");
+            return;
+        }
+
+
+        BigDecimal triangleArea = base.multiply(height).multiply(BigDecimal.valueOf(0.5));
 
         // Display the triangle's area.
-        System.out.println("The triangle's area is "
-                + Geometry.areaOfTriangle(base, height));
+        System.out.println("The triangle's area is " + triangleArea);
     }
 }
