@@ -19,30 +19,14 @@ public class PhoneKeyPad {
             int digit = 0;
 
             switch (letterDigit) {
-                case 'a', 'b', 'c':
-                    digit = 2;
-                    break;
-                case 'd', 'e', 'f':
-                    digit = 3;
-                    break;
-                case 'g', 'h', 'i':
-                    digit = 4;
-                    break;
-                case 'j', 'k', 'l':
-                    digit = 5;
-                    break;
-                case 'm', 'n', 'o':
-                    digit = 6;
-                    break;
-                case 'p', 'q', 'r', 's':
-                    digit = 7;
-                    break;
-                case 't', 'u', 'v':
-                    digit = 8;
-                    break;
-                case 'w', 'x', 'y', 'z':
-                    digit = 9;
-                    break;
+                case 'a', 'b', 'c' -> digit = 2;
+                case 'd', 'e', 'f' -> digit = 3;
+                case 'g', 'h', 'i' -> digit = 4;
+                case 'j', 'k', 'l' -> digit = 5;
+                case 'm', 'n', 'o' -> digit = 6;
+                case 'p', 'q', 'r', 's' -> digit = 7;
+                case 't', 'u', 'v' -> digit = 8;
+                case 'w', 'x', 'y', 'z' -> digit = 9;
             }
 
             System.out.print(digit);
