@@ -13,9 +13,10 @@ public class Piglet {
 
         while (true) {
             int randomNumber = random.nextInt(6) + 1;
+            System.out.println("You rolled a " + randomNumber + " !");
 
             if (randomNumber == 1) {
-                System.out.println("You rolled a " + randomNumber + " !");
+                
                 rolledScore = 0;
                 System.out.println("You got 0 points!");
                 break;
