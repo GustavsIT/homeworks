@@ -13,32 +13,6 @@ public class Car {
         this.liters = liters;
     }
 
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-
-        double startKilometers, endKilometers, liters;
-
-        System.out.print("Enter odometer's start value:");
-        startKilometers = scan.nextDouble();
-
-        System.out.print("Enter odometer's end value: ");
-        endKilometers = scan.nextDouble();
-
-        System.out.print("Enter liters consumed: ");
-        liters = scan.nextDouble();
-
-        Car car = new Car(startKilometers, endKilometers, liters);
-
-        System.out.println("Kilometers per liter are " + car.calculateConsumption());
-
-        if (car.hasHog()) {
-            System.out.println("Your car consumes a lot of fuel!");
-        }
-        if (car.economyCar()) {
-            System.out.println("Economy car!");
-        }
-    }
-
     public double calculateConsumption() {
         double consumption = (endingOdo - startOdo) / liters;
         return consumption;
