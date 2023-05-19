@@ -29,8 +29,8 @@ class LitersPerKilometer {
         }
 
         Car car1 = new Car(10, 1000, 5);
-        double carConsumption = car1.calculateConsumption();
-        System.out.println("Car1 consumption is: " + carConsumption);
+        double car1Consumption = car1.calculateConsumption();
+        System.out.println("Car1 consumption is: " + ca1rConsumption);
 
         Car car2 = new Car(50, 1000, 20);
         double car2Consumption = car2.calculateConsumption();
