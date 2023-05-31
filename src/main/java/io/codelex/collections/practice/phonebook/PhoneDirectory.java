@@ -1,23 +1,23 @@
 package io.codelex.collections.practice.phonebook;
 
 import java.util.Arrays;
+import java.util.TreeMap;
 
 public class PhoneDirectory {
-    private PhoneEntry[] data;
+    private TreeMap<String, String> data;
     private int dataCount;
 
     public PhoneDirectory() {
-        data = new PhoneEntry[1];
+        data = new TreeMap<>();
         dataCount = 0;
     }
 
     private int find(String name) {
-        for (int i = 0; i < dataCount; i++) {
-            if (data[i].name.equals(name)) {
-                return i;
-            }
+        if (data.containsKey(name)) {
+            return 0;
+        } else {
+            return -1;
         }
-        return -1;
     }
 
     public String getNumber(String name) {
@@ -25,7 +25,7 @@ public class PhoneDirectory {
         if (position == -1) {
             return null;
         } else {
-            return data[position].number;
+            return data.get(name);
         }
     }
 
@@ -33,19 +33,8 @@ public class PhoneDirectory {
         if (name == null || number == null) {
             throw new IllegalArgumentException("name and number cannot be null");
         }
-        int i = find(name);
-        if (i >= 0) {
-            data[i].number = number;
-        } else {
-            if (dataCount == data.length) {
-                data = Arrays.copyOf(data, 2 * data.length);
-            }
-            PhoneEntry newEntry = new PhoneEntry();  // Create a new pair.
-            newEntry.name = name;
-            newEntry.number = number;
-            data[dataCount] = newEntry;   // Add the new pair to the array.
-            dataCount++;
-        }
+        data.put(name, number);
     }
-
 }
+
+
