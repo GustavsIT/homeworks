@@ -11,18 +11,7 @@ public class Quiz1 {
                 new Person("Bob")
         );
 
-        // Which one is an iteration using Stream API
-        // 1.
-        for (int i = 0; i < persons.size(); i++) {
-            System.out.println(persons.get(i));
-        }
-        // 2.
-        for (Person person : persons) {
-            System.out.println(person);
-        }
-        // 3.
-        System.out.println(persons);
-        // 4.
+        // an iteration using Stream API:
         persons.forEach(System.out::println);
     }
 }
