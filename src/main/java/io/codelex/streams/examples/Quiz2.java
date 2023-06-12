@@ -8,10 +8,8 @@ public class Quiz2 {
                 .filter(n -> n > 5)
                 .sorted()
                 .forEach(System.out::println);
-        // What will be the output?
+        // Output will be:
         // 1. 6 8 12 34 65
-        // 2. 34 6 12 65 8
-        // 3. 34 6 3 12 65 1 8
-        // 4. 1 3 6 8 12 34 65
+
     }
 }
