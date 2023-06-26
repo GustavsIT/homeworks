@@ -10,7 +10,9 @@ public class Joiner<T> {
     public String join(T... elements) {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < elements.length; i++) {
-            result.append(elements[i].toString());
+            if (elements[i] != null) {
+                result.append(elements[i].toString());
+            }
             if (i < elements.length - 1) {
                 result.append(separator);
             }

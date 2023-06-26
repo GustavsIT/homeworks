@@ -17,14 +17,11 @@ public class Satisfaction {
     }
 
     public static <T> double partOf(List<T> items, Predicate<T> condition) {
-        int satisfiedCount = 0;
-        int totalCount = items.size();
-        for (T item : items) {
-            if (condition.test(item)) {
-                satisfiedCount++;
-            }
-        }
-        double percentage = (double) satisfiedCount / totalCount;
+        long satisfiedCount = items.stream()
+                .filter(condition)
+                .count();
+
+        double percentage = (double) satisfiedCount / items.size();
         return percentage;
     }
 
