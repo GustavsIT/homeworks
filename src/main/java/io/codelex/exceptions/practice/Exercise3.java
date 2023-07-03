@@ -1,11 +1,11 @@
 package io.codelex.exceptions.practice;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 
 public class Exercise3 {
     public static void cat(File file) {
-        /*
-        TODO - fix this method so it compiles
         RandomAccessFile input = null;
         String line = null;
 
@@ -14,12 +14,17 @@ public class Exercise3 {
             while ((line = input.readLine()) != null) {
                 System.out.println(line);
             }
-            return;
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
         } finally {
             if (input != null) {
-                input.close();
+                try {
+                    input.close();
+                } catch (IOException e) {
+                    System.out.println("Error closing file: " + e.getMessage());
+                }
             }
         }
-        */
+
     }
 }
